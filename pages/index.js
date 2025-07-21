@@ -52,7 +52,7 @@ export default function Home() {
 
         {/* About Me */}
         <section id="about" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4">01. About Me</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4">About Me</h2>
           <p className="text-gray-300 max-w-3xl">
             I’m a software engineer with a Master’s in Computer & Information Science from the University at Albany (SUNY). My work spans full‑stack Java/Spring development, cloud deployments (AWS), and applied AI/ML.
           </p>
@@ -60,7 +60,7 @@ export default function Home() {
 
         {/* Skills */}
         <section id="skills" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4">02. Skills Snapshot</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4"> Skills Snapshot</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm text-white">
             {['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Spring Boot', 'React.js', 'Next.js', 'AWS', 'Node.js/Express'].map(skill => (
               <span key={skill} className="px-3 py-1 bg-gray-800 rounded-full text-center">{skill}</span>
@@ -70,7 +70,7 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-6">03. Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-6">Featured Projects</h2>
           <div className="space-y-10">
             {[{ title: 'Blossom – Florist recommendation system', stack: 'React.js, Node.js/Express, MongoDB/MySQL, AWS', desc: 'Recommends bouquets based on occasion + relationship tags; reduced product search time by ~60%.' }, { title: 'Destinova – Travel Recommender', stack: 'Next.js/React, Node.js, ML (Scikit-learn), MongoDB, AWS EC2', desc: 'Suggests destinations based on climate, budget, activities; ~85% match rate in survey.' }, { title: "Parkinson's Risk Insight Tool", stack: 'Python, Streamlit, Scikit-learn', desc: 'Symptom intake + early lifestyle guidance; prototype in progress with expanded dataset.' }, { title: 'URL Shortener @ Scale', stack: 'Redis, Postgres, HashIDs', desc: 'Built scalable short-link system with fast redirect logic and collision-resistant encoding.' }, { title: 'Distributed Task Scheduler', stack: 'Go, Postgres, gRPC, Docker', desc: 'Orchestrates background jobs with retries, metrics, REST & gRPC APIs.' }].map((proj, i) => (
               <div key={i} className="bg-gray-800 p-6 rounded-lg shadow">
@@ -82,9 +82,24 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Experience */}
+        <section id="experience" className="px-6 py-12 container mx-auto">
+          <h2 className="text-3xl font-bold text-cyan-400 mb-6">Experience</h2>
+          <div className="space-y-10">
+            {[{ title: 'YKS IT services', stack: 'React.js, Node.js/Express, MongoDB/MySQL, AWS', desc: 'Worked as ful stack developer' }].map((exp, i) => (
+              <div key={i} className="bg-gray-800 p-6 rounded-lg shadow">
+                <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
+                <p className="text-sm text-cyan-400 mb-1">{exp.stack}</p>
+                <p className="text-gray-300">{exp.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Achievements */}
         <section id="achievements" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4">04. Certifications & Achievements</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4">Certifications & Achievements</h2>
           <ul className="list-disc list-inside text-gray-300 space-y-2">
             <li>AWS Cloud Practitioner (Target 2025)</li>
             <li>Oracle Certified Associate, Java SE (in progress)</li>
@@ -95,7 +110,7 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4">05. Contact Me</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4">Contact Me</h2>
           <p className="text-gray-300 mb-4">Let’s build something. I’m open to full-time roles, AI/ML builds, or open source collabs.</p>
           <div className="space-y-2 text-white">
             <p>Email: <a href="mailto:you@domain.com" className="text-cyan-400">you@domain.com</a></p>

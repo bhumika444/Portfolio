@@ -1,12 +1,78 @@
 import React from 'react';
 import Image from 'next/image';
-import ParticlesCursor from '../components/ParticlesCursor';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
+import { useCallback } from 'react';
+
 
 export default function Home() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
   return (
-    <main className="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans">
-      <ParticlesCursor />
-
+    <main className="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans relative">
+        <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: false },
+          background: { color: 'transparent' },
+          fpsLimit: 60,
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: 'repulse'
+              },
+              resize: true
+            },
+            modes: {
+              repulse: {
+                distance: 100,
+                duration: 0.4
+              }
+            }
+          },
+          particles: {
+            number: {
+              value: 40,
+              density: {
+                enable: true,
+                area: 800
+              }
+            },
+            color: { value: '#00ffff' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.6 },
+            size: { value: { min: 1, max: 4 } },
+            links: {
+              enable: true,
+              distance: 120,
+              color: '#00ffff',
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1.5,
+              direction: 'none',
+              random: false,
+              straight: false,
+              outModes: 'out',
+              bounce: false
+            }
+          },
+          detectRetina: true
+        }}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1
+        }}
+      />
       {/* Navbar */}
       <nav className="w-full fixed top-0 z-50 px-6 py-4 bg-black bg-opacity-90 shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
@@ -46,7 +112,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 lg:mt-0">
-            <Image src="/bhumika-profile.jpg" alt="Bhumika Dommaraju" width={320} height={400} className="rounded-xl shadow-lg" />
+            <Image src="/bhumika-profile.JPG" alt="Bhumika Dommaraju" width={320} height={400} className="rounded-xl shadow-lg" />
           </div>
         </section>
 
@@ -60,9 +126,9 @@ export default function Home() {
 
         {/* Skills */}
         <section id="skills" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4"> Skills Snapshot</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4"> Texnical Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm text-white">
-            {['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Spring Boot', 'React.js', 'Next.js', 'AWS', 'Node.js/Express'].map(skill => (
+            {['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Spring Boot', 'React.js', 'Next.js', 'AWS', 'Node.js','Express.js','Azure','Docker','Splunk'].map(skill => (
               <span key={skill} className="px-3 py-1 bg-gray-800 rounded-full text-center">{skill}</span>
             ))}
           </div>
@@ -102,9 +168,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-cyan-400 mb-4">Certifications & Achievements</h2>
           <ul className="list-disc list-inside text-gray-300 space-y-2">
             <li>AWS Cloud Practitioner (Target 2025)</li>
-            <li>Oracle Certified Associate, Java SE (in progress)</li>
-            <li>Hackathon Finalist / Winner (list event if applicable)</li>
-            <li>BuildCore Batch Applicant / Participant (if accepted)</li>
+            <li>Oracle Certified Associate, Java SE </li>
+            <li>Virtusa Jatayu Hackathon Finalist </li>
           </ul>
         </section>
 
@@ -113,7 +178,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-cyan-400 mb-4">Contact Me</h2>
           <p className="text-gray-300 mb-4">Let’s build something. I’m open to full-time roles, AI/ML builds, or open source collabs.</p>
           <div className="space-y-2 text-white">
-            <p>Email: <a href="mailto:you@domain.com" className="text-cyan-400">you@domain.com</a></p>
+            <p>Email: <a href="mailto:dommarajubhumika@gmail.com" className="text-cyan-400">dommarajubhumika@gmail.com</a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/bhumikaraju" className="text-cyan-400">bhumikaraju</a></p>
             <p>GitHub: <a href="https://github.com/bhumika444" className="text-cyan-400">bhumika444</a></p>
             <p>Location: Michigan, USA (Open to SF Bay Area & NY)</p>

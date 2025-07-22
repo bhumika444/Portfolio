@@ -13,7 +13,7 @@ export default function ParticlesCursor() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: { enable: false },
+        fullScreen: { enable: true, zindex:1 },
         background: { color: 'transparent' },
         fpsLimit: 60,
         interactivity: {
@@ -33,7 +33,7 @@ export default function ParticlesCursor() {
         },
         particles: {
           number: {
-            value: 40,
+            value: 50,
             density: {
               enable: true,
               area: 800
@@ -51,12 +51,12 @@ export default function ParticlesCursor() {
             enable: true,
             distance: 120,
             color: '#00ffff',
-            opacity: 0.4,
+            opacity: 0.3,
             width: 1
           },
           move: {
             enable: true,
-            speed: 1.2,
+            speed: 1.5,
             direction: 'none',
             random: false,
             straight: false,
@@ -70,9 +70,11 @@ export default function ParticlesCursor() {
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: -1
+        // width: '100%',
+        // height: '100%',
+        // zIndex: 2,
+        pointerEvents: 'none',
+        // mixBlendMode: 'lighten'
       }}
     />
   );

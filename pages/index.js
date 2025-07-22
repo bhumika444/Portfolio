@@ -1,78 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import { useCallback } from 'react';
+import ParticlesCursor from '../components/ParticlesCursor';
 
 
 export default function Home() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
   return (
     <main className="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans relative">
-        <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          background: { color: 'transparent' },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onHover: {
-                enable: true,
-                mode: 'repulse'
-              },
-              resize: true
-            },
-            modes: {
-              repulse: {
-                distance: 100,
-                duration: 0.4
-              }
-            }
-          },
-          particles: {
-            number: {
-              value: 40,
-              density: {
-                enable: true,
-                area: 800
-              }
-            },
-            color: { value: '#00ffff' },
-            shape: { type: 'circle' },
-            opacity: { value: 0.6 },
-            size: { value: { min: 1, max: 4 } },
-            links: {
-              enable: true,
-              distance: 120,
-              color: '#00ffff',
-              opacity: 0.4,
-              width: 1
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: 'none',
-              random: false,
-              straight: false,
-              outModes: 'out',
-              bounce: false
-            }
-          },
-          detectRetina: true
-        }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1
-        }}
-      />
+      <ParticlesCursor/>
+  
       {/* Navbar */}
       <nav className="w-full fixed top-0 z-50 px-6 py-4 bg-black bg-opacity-90 shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
@@ -94,7 +30,12 @@ export default function Home() {
       <div className="pt-24">
 
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 py-20 container mx-auto">
+        <section className="min-h-screen relative overflow-hidden bg-transparent">
+        {/* Particles floating inside this section */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <ParticlesCursor />
+        </div>
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-6 py-20 container mx-auto bg-transparent">
           <div className="text-left max-w-xl">
             <p className="text-teal-400 text-xl mb-2">Hi, I’m</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Bhumika Dommaraju</h1>
@@ -114,6 +55,7 @@ export default function Home() {
           <div className="mt-12 lg:mt-0">
             <Image src="/bhumika-profile.JPG" alt="Bhumika Dommaraju" width={320} height={400} className="rounded-xl shadow-lg" />
           </div>
+        </div>
         </section>
 
         {/* About Me */}

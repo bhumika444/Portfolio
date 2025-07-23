@@ -21,6 +21,7 @@ export default function Home() {
             <li><a href="#projects" className="border border-teal-400 px-4 py-2 rounded-xl text-white hover:bg-teal-500 hover:text-black transition">Projects</a></li>
             <li><a href="#experience" className="border border-teal-400 px-4 py-2 rounded-xl text-white hover:bg-teal-500 hover:text-black transition">Experience</a></li>
             <li><a href="#achievements" className="border border-teal-400 px-4 py-2 rounded-xl text-white hover:bg-teal-500 hover:text-black transition">Achievements</a></li>
+            <li><a href="#education" className="border border-teal-400 px-4 py-2 rounded-xl text-white hover:bg-teal-500 hover:text-black transition">Education</a></li>
             <li><a href="#contact" className="border border-teal-400 px-4 py-2 rounded-xl text-white hover:bg-teal-500 hover:text-black transition">Contact</a></li>
           </ul>
         </div>
@@ -47,13 +48,13 @@ export default function Home() {
               <a href="#projects" className="px-6 py-3 bg-cyan-400 text-black font-semibold rounded-full shadow hover:shadow-lg transition">
                 View My Work
               </a>
-              <a href="/resume.pdf" target="_blank" className="px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
+              <a href="/bhumika-resume.pdf" target="_blank" className="px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
                 Download Resume
               </a>
             </div>
           </div>
           <div className="mt-12 lg:mt-0">
-            <Image src="/bhumika-profile.JPG" alt="Bhumika Dommaraju" width={320} height={400} className="rounded-xl shadow-lg" />
+            <Image src="/bhumika.jpg" alt="Bhumika Dommaraju" width={320} height={400} className="rounded-xl shadow-lg" />
           </div>
         </div>
         </section>
@@ -68,7 +69,7 @@ export default function Home() {
 
         {/* Skills */}
         <section id="skills" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-4"> Texnical Skills</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4"> Technical Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm text-white">
             {['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'Spring Boot', 'React.js', 'Next.js', 'AWS', 'Node.js','Express.js','Azure','Docker','Splunk'].map(skill => (
               <span key={skill} className="px-3 py-1 bg-gray-800 rounded-full text-center">{skill}</span>
@@ -78,7 +79,7 @@ export default function Home() {
 
         {/* Projects */}
         <section id="projects" className="px-6 py-12 container mx-auto">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-6">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-cyan-400 mb-6">Projects</h2>
           <div className="space-y-10">
             {[{ title: 'Blossom – Florist recommendation system', stack: 'React.js, Node.js/Express, MongoDB/MySQL, AWS', desc: 'Recommends bouquets based on occasion + relationship tags; reduced product search time by ~60%.' }, { title: 'Destinova – Travel Recommender', stack: 'Next.js/React, Node.js, ML (Scikit-learn), MongoDB, AWS EC2', desc: 'Suggests destinations based on climate, budget, activities; ~85% match rate in survey.' }, { title: "Parkinson's Risk Insight Tool", stack: 'Python, Streamlit, Scikit-learn', desc: 'Symptom intake + early lifestyle guidance; prototype in progress with expanded dataset.' }, { title: 'URL Shortener @ Scale', stack: 'Redis, Postgres, HashIDs', desc: 'Built scalable short-link system with fast redirect logic and collision-resistant encoding.' }, { title: 'Distributed Task Scheduler', stack: 'Go, Postgres, gRPC, Docker', desc: 'Orchestrates background jobs with retries, metrics, REST & gRPC APIs.' }].map((proj, i) => (
               <div key={i} className="bg-gray-800 p-6 rounded-lg shadow">
@@ -95,7 +96,7 @@ export default function Home() {
         <section id="experience" className="px-6 py-12 container mx-auto">
           <h2 className="text-3xl font-bold text-cyan-400 mb-6">Experience</h2>
           <div className="space-y-10">
-            {[{ title: 'YKS IT services', stack: 'React.js, Node.js/Express, MongoDB/MySQL, AWS', desc: 'Worked as ful stack developer' }].map((exp, i) => (
+            {[{ title: 'BNY Mellon', stack: 'Focuses on Java, Python, React, AWS, Spring Boot, and financial data systems with strong emphasis on security, compliance, and cloud-native architecture.', desc: 'Led development of real-time financial portals using Java, Spring Boot, React.js, and AWS. Built secure REST APIs for payments/KYC, cutting processing time by 20%. Deployed CI/CD with Jenkins & Docker, reducing release time by 40% and ensuring <1% downtime. Secured systems with OAuth2, MFA, and JWT; monitored via AWS CloudWatch and Splunk. Managed scalable microservices on AWS ECS/EKS; enhanced UX with responsive, user-centric designs.' },{ title: 'Capgemini', stack: 'Uses Java, Spring Boot, Angular, Azure, and Docker/Kubernetes to build scalable enterprise applications across diverse client industries.', desc: 'Built scalable cloud-native apps using Java, Spring Boot, Angular, and Azure for 10K+ users. Optimized workflows with Azure Blob Storage, Docker, and Kubernetes. Enhanced monitoring with Azure Monitor + ELK and secured systems using OAuth2, JWT, and Azure AD. Led cloud cost optimization and collaborated in Agile teams to deliver impactful features.' }].map((exp, i) => (
               <div key={i} className="bg-gray-800 p-6 rounded-lg shadow">
                 <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
                 <p className="text-sm text-cyan-400 mb-1">{exp.stack}</p>
@@ -109,18 +110,35 @@ export default function Home() {
         <section id="achievements" className="px-6 py-12 container mx-auto">
           <h2 className="text-3xl font-bold text-cyan-400 mb-4">Certifications & Achievements</h2>
           <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li>AWS Cloud Practitioner (Target 2025)</li>
-            <li>Oracle Certified Associate, Java SE </li>
-            <li>Virtusa Jatayu Hackathon Finalist </li>
+            <li>Completed the Oracle Academy Database Programming with SQL.</li>
+            <li>Placed in the Top 3 at my college in the Google Cloud Program 2021, completed the Cloud Engineering Track and Data Science & Machine Learning Track.</li>
+            <li>Virtusa Jatayu Hackathon Finalist. </li>
+            <li>Earned two Salesforce super badges: Process Automation Specialist and Security Specialist.</li>
           </ul>
         </section>
+
+        
+        {/* Education */}
+        <section id="education" className="px-6 py-12 container mx-auto">
+          <h2 className="text-3xl font-bold text-cyan-400 mb-6">Education</h2>
+          <div className="space-y-10">
+            {[{ title: 'University at Albany, SUNY', stack: 'Computer Science', desc: 'Algorithms and Data Structures | Software Engineering | Artificial Intelligence | Operating Systems | Database Systems | Computer Architecture' },{ title: 'CVR College of Engineering', stack: 'Computer Science and Engineering', desc: 'Operating Systems | Algorithms and Data Structures | Computer Algorithms Design & Analysis | Compiler Design | Software Engineering | Data Science | Computer Networks and Security | Web Technologies | Computational Mathematics | Relational Database Management Systems | Cyber Security' }].map((edu, i) => (
+              <div key={i} className="bg-gray-800 p-6 rounded-lg shadow">
+                <h3 className="text-xl font-bold text-white mb-1">{edu.title}</h3>
+                <p className="text-sm text-cyan-400 ">{edu.stack}</p>
+                <p className="text-gray-300">{edu.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
 
         {/* Contact */}
         <section id="contact" className="px-6 py-12 container mx-auto">
           <h2 className="text-3xl font-bold text-cyan-400 mb-4">Contact Me</h2>
           <p className="text-gray-300 mb-4">Let’s build something. I’m open to full-time roles, AI/ML builds, or open source collabs.</p>
           <div className="space-y-2 text-white">
-            <p>Email: <a href="mailto:dommarajubhumika@gmail.com" className="text-cyan-400">dommarajubhumika@gmail.com</a></p>
+            <p>Email: <a href="mailto:bhumikadommaraju7@gmail.com" className="text-cyan-400">bhumikadommaraju7@gmail.com</a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/bhumikaraju" className="text-cyan-400">bhumikaraju</a></p>
             <p>GitHub: <a href="https://github.com/bhumika444" className="text-cyan-400">bhumika444</a></p>
             <p>Location: Michigan, USA (Open to SF Bay Area & NY)</p>
